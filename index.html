@@ -1,0 +1,117 @@
+<html lang="en">
+  <head>
+    <title>
+      React Example - Financial Charts Configuration - Chart Features
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <style media="only screen">
+      :root {
+        overflow: hidden;
+        font-family: -apple-system, "system-ui", "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+
+        --button-background-color: transparent;
+        --button-text-color: #212529;
+        --button-color-border-primary: #d0d5dd;
+        --button-hover-background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      :root[data-dark-mode="true"] {
+        background: #192232;
+        color: white;
+
+        --button-text-color: #f8f9fa;
+        --button-color-border-primary: rgba(255, 255, 255, 0.2);
+        --button-hover-background-color: #2a343e;
+      }
+
+      :root,
+      body,
+      #root {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      #root {
+        display: grid;
+        grid: "toolbar" auto "canvas" minmax(0, 1fr) / 1fr;
+        padding: 1rem;
+        gap: 9px;
+      }
+
+      .toolbar {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: calc(var(--gap-vertical) * 0.5) var(--gap-horizontal);
+        --gap-vertical: 6px;
+        --gap-horizontal: 8px;
+      }
+
+      .toolbar hr {
+        all: initial;
+        flex: 0 0 100%;
+      }
+
+      .toolbar button {
+        appearance: none;
+        border: 1px solid var(--button-color-border-primary);
+        border-radius: 6px;
+        height: 36px;
+        color: var(--button-text-color);
+        background: var(--button-background-color);
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        padding: 0.375em 1em 0.5em;
+        white-space: nowrap;
+        transition: background-color 0.25s ease-in-out;
+      }
+
+      .toolbar button:hover {
+        background: var(--button-hover-background-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="/reactFunctional/financial-charts-configuration/examples/chart-features/data.js"></script>
+    <script>
+      var appLocation =
+        "/reactFunctional/financial-charts-configuration/examples/chart-features";
+      var boilerplatePath = "/example-runner/charts-react-boilerplate";
+      var systemJsMap = {
+        "ag-charts-community":
+          "https://cdn.jsdelivr.net/npm/ag-charts-community@10.1.0/dist/package/main.cjs.js",
+        "ag-charts-enterprise":
+          "https://cdn.jsdelivr.net/npm/ag-charts-enterprise@10.1.0/dist/package/main.cjs.js",
+        "ag-charts-locale":
+          "https://cdn.jsdelivr.net/npm/ag-charts-locale@10.1.0/dist/package/main.cjs.js",
+        "ag-charts-react":
+          "https://cdn.jsdelivr.net/npm/ag-charts-react@10.1.0/",
+        "ag-charts-types":
+          "https://cdn.jsdelivr.net/npm/ag-charts-types@10.1.0/dist/package/main.cjs.js",
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@0.19.47/dist/system.js"></script>
+    <script src="/example-runner/charts-react-boilerplate/systemjs.config.js"></script>
+    <script>
+      System.import(
+        "/reactFunctional/financial-charts-configuration/examples/chart-features/index.jsx"
+      ).catch(function (err) {
+        console.error(err);
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
